@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYSTEMS THINKING</title>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      position: relative;
+    }
+    header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #3498db;
+    }
+    header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .subtitle {
+      font-size: 20px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #2c3e50;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    /* EE section */
+    .external-env {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 40px;
+    }
+    .ee-intro {
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #444;
+    }
+    .ee-intro ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    .factor {
+      background: #fff;
+      border-left: 4px solid #3498db;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .factor-title {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .factor-desc {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* IE cyclic diagram */
+    .internal-env {
+      background: #fdfdfd;
+      border-radius: 10px;
+      padding: 20px;
+      min-height: 600px;
+      position: relative;
+    }
+    .cycle-diagram {
+      position: relative;
+      width: 100%;
+      height: 550px;
+      margin: 0 auto;
+    }
+    .flow-step {
+      background: #e3f2fd;
+      border: 2px solid #90caf9;
+      border-radius: 6px;
+      padding: 12px;
+      width: 180px;
+      text-align: center;
+      font-weight: 600;
+      position: absolute;
+    }
+    .flow-details {
+      font-size: 12px;
+      font-weight: normal;
+      color: #444;
+    }
+
+    /* Node positions */
+    #website   { top: 220px; left: 50%; transform: translateX(-50%); }
+    #customers { top: 40px; left: 50%; transform: translateX(-50%); }
+    #suppliers { top: 220px; left: 80px; }
+    #staging   { top: 380px; left: 80px; }
+    #driver    { top: 380px; right: 80px; }
+
+    /* SVG arrows */
+    svg.arrows {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>SYSTEMS THINKING</h1>
+    </header>
+
+    <!-- External Environment -->
+    <div class="subtitle">EXTERNAL ENVIRONMENT (EE)</div>
+    <div class="external-env">
+      <div class="ee-intro">
+        <ul>
+          <li>Affects the whole system</li>
+          <li>Outside of control</li>
+        </ul>
+      </div>
+      <div class="factor">
+        <div class="factor-title">ECONOMIC CONDITIONS</div>
+        <div class="factor-desc">Consumer income, tax rates, and inflation that influence purchasing power and payments.</div>
+      </div>
+      <div class="factor">
+        <div class="factor-title">LEGAL FRAMEWORK</div>
+        <div class="factor-desc">Policies and regulations that govern business operations.</div>
+      </div>
+      <div class="factor">
+        <div class="factor-title">SOCIAL FRAMEWORK</div>
+        <div class="factor-desc">Consumer beliefs, attitudes, and cultural norms shaping brand perception.</div>
+      </div>
+      <div class="factor">
+        <div class="factor-title">TECHNOLOGY & TRENDS</div>
+        <div class="factor-desc">Fashion trends, innovations, and technological advancements.</div>
+      </div>
+    </div>
+
+    <!-- Internal Environment -->
+    <div class="subtitle">INTERNAL ENVIRONMENT (IE)</div>
+    <div class="internal-env">
+      <div class="cycle-diagram">
+
+        <!-- Nodes -->
+        <div class="flow-step" id="website">
+          KEVIN CLOTHING
+          <div class="flow-details">Business Website</div>
+        </div>
+        <div class="flow-step" id="customers">
+          CUSTOMERS
+          <div class="flow-details">Clients</div>
+        </div>
+        <div class="flow-step" id="suppliers">
+          SUPPLIERS
+          <div class="flow-details">Local Boutique Store</div>
+        </div>
+        <div class="flow-step" id="staging">
+          STAGING AREA
+          <div class="flow-details">(Goods ready for delivery)</div>
+        </div>
+        <div class="flow-step" id="driver">
+          DELIVERY DRIVER
+          <div class="flow-details">Local Driver</div>
+        </div>
+
+        <!-- Main Arrows -->
+        <svg class="arrows">
+          <!-- Customers → Website -->
+          <path d="M 550 120 L 550 220" stroke="black" fill="transparent" marker-end="url(#arrow)" />
+          <text x="510" y="170" font-size="12">Makes order</text>
+
+          <!-- Website → Suppliers -->
+          <path d="M 460 240 Q 320 200 200 240" stroke="black" fill="transparent" marker-end="url(#arrow)" />
+          <text x="280" y="190" font-size="12">Dispatch</text>
+
+          <!-- Suppliers → Staging -->
+          <path d="M 180 260 L 180 380" stroke="black" fill="transparent" marker-end="url(#arrow)" />
+          <text x="90" y="320" font-size="12">Goods sourced</text>
+
+          <!-- Staging → Driver -->
+          <path d="M 200 400 Q 400 460 720 400" stroke="black" fill="transparent" marker-end="url(#arrow)" />
+          <text x="360" y="450" font-size="12">Store contacts driver</text>
+
+          <!-- Driver → Customers -->
+          <path d="M 740 380 Q 820 200 560 100" stroke="black" fill="transparent" marker-end="url(#arrow)" />
+          <text x="660" y="180" font-size="12">Goods delivered</text>
+
+          <!-- Arrowhead -->
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3"
+              orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L6,3 z" fill="#000" />
+            </marker>
+          </defs>
+        </svg>
+
+        <!-- Payment Arrows -->
+        <svg class="arrows">
+          <!-- Customers → Website (Payment) -->
+          <path d="M 560 120 Q 640 200 560 240" stroke="#7e57c2" stroke-dasharray="4"
+            fill="transparent" marker-end="url(#arrow-purple)" />
+          <text x="650" y="200" font-size="12" fill="#7e57c2">Payment at profit X</text>
+
+          <!-- Website → Store (Payment) -->
+          <path d="M 460 230 Q 320 160 200 230" stroke="#7e57c2" stroke-dasharray="4"
+            fill="transparent" marker-end="url(#arrow-purple)" />
+          <text x="250" y="150" font-size="12" fill="#7e57c2">Payment to store</text>
+
+          <!-- Store → Driver (Payment) -->
+          <path d="M 180 380 Q 400 300 720 380" stroke="#7e57c2" stroke-dasharray="4"
+            fill="transparent" marker-end="url(#arrow-purple)" />
+          <text x="360" y="310" font-size="12" fill="#7e57c2">Payment to driver</text>
+
+          <!-- Arrowhead purple -->
+          <defs>
+            <marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="6" refY="3"
+              orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L6,3 z" fill="#7e57c2" />
+            </marker>
+          </defs>
+        </svg>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
