@@ -2,7 +2,7 @@
 OVERVIEW 
 
 This is a vibe-coded project , developed as part of my ALX learning Program    
-It applies systems thinking to design a platform — an “Uber for Clothes” — that connects local boutique stores to customers through one  imaginary online marketplace. The goal was to build a visualizer ,  to explore how different parts of a system interact and influence one another.  
+It applies systems thinking to design a platform  an “Uber for Clothes”  that connects local boutique stores to customers through one  imaginary online marketplace. The goal was to build a visualizer ,  to explore how different parts of a system interact and influence one another.  
 
 
 
@@ -12,10 +12,13 @@ Systems thinking is an approach to problem-solving that focuses on the whole sys
 
 In "Kevin Clothing" I explored how: 
 
-- Local Boutique Owners– often struggle with visibility and access to clients.  
+-Local Boutique Owners– often struggle with visibility and access to clients.
+
 -Local Consumers  – want affordable, convenient fashion.  
--The imaginary website  – acts as the hub that connects supply and demand.  
-- Delivery Partners – complete the final piece of the system by delivering the desired goods to the final consumer.  
+
+-The imaginary website  – acts as the hub that connects supply and demand. 
+
+-Delivery Partners – complete the final piece of the system by delivering the desired goods to the final consumer.  
 
 It also gives a general overview of  the interconnectedness between External Environment systems and internal environment systems.One of the major principles I adopted from my business class in highschool.
 
@@ -44,9 +47,11 @@ Example: Low tax rates may increase consumer spending and benefit boutiques, whi
 - `kevinclothing9.html` → Diagram showing how the system flows. 
 
 HOW TO RUN 
-1)Clone this repository 
 
+1)Clone this repository 
+```bash
 git clone https://github.com/keden49/SYSTEMS-THINKING-.git
+```
 
 2)Open the html file on any browser 
 
@@ -54,4 +59,4 @@ git clone https://github.com/keden49/SYSTEMS-THINKING-.git
 
 REFLECTIONS  
 This project reflects my passion for systems thinking and how interconnected parts shape outcomes 
-Through It, I discovered that systems thinking is a shift in  mindset where we analyze problematic situations from a wider scope of things,as challenges that may seem isolated  maybe more complex than we think,and the only way to find the root cause is through deep analysis into systems . For instance in my case ,if my store is experiencing a low turn over rate , and ive tried all best sale promotions strategies but non is working out ,the best approach to it ,would be shifting my focus from the internal systems and considering my external environment and adjusting my business to meet the current conditions .
+Through It, I discovered that systems thinking is a shift in  mindset where we analyze problematic situations from a wider scope of things,as challenges that may seem isolated  maybe more complex they seem,and the only way to find the root cause is through deep analysis into systems sorrounding it  . For instance in my case ,if my store is experiencing a low turn over rate , and ive tried all best sale promotions strategies but non is working out ,the best approach to it ,would be shifting my focus from the internal systems and considering my external environment and adjusting my business to meet the current conditions .
